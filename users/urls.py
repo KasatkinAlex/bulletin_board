@@ -16,7 +16,7 @@ urlpatterns = [
     path('token/refresh/',
          TokenRefreshView.as_view(permission_classes=(AllowAny,)),
          name='token_refresh'),
-    path('list', UserListAPIView.as_view(), name='user_list'),
+    path('list/', UserListAPIView.as_view(), name='user_list'),
     path('reset_password/', UserViewSet.reset_password, name='reset_password'),
     path('reset_password_confirm/', UserViewSet.reset_password_confirm, name='reset_password_confirm')
 ]

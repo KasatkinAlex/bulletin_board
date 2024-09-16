@@ -5,8 +5,8 @@ from django.db import models
 class User(AbstractUser):
 
     ROLE_USER = [
-        ("user", "пользователь"),
-        ("admin", "администратор")
+        ("user", "user"),
+        ("admin", "admin")
     ]
 
     username = None

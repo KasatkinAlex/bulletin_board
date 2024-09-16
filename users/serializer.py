@@ -1,0 +1,23 @@
+from rest_framework import serializers
+
+from users.models import User
+
+
+class UserSerializerCustom(serializers.ModelSerializer):
+
+    class Meta:
+        model = User
+        fields = "__all__"
+
+    def to_representation(self, instance):
+        representation = super().to_representation(instance)
+        representation["password"] = "Пароль захеширован"
+        return representation
+
+
+class UserSerializerList(serializers.ModelSerializer):
+
+    class Meta:
+        model = User
+        fields = ("first_name", "last_name",
+                  "email", "phone", "avatar", "role")

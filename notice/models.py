@@ -20,7 +20,10 @@ class Ads(models.Model):
     class Meta:
         verbose_name = "Обьявление"
         verbose_name_plural = "Обьявления"
-        ordering = ['created_at']
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return self.title
 
 
 class Comment(models.Model):
